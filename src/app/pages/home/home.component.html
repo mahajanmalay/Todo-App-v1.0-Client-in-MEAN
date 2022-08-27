@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3>Tasks</h3>
+            <div class="card mt-2" *ngFor="let todo of toDos; index as i">
+                <h5 class="card-header">#{{i+1}}</h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{todo.name}}</h5>
+                  <p class="card-text">{{todo.about}}</p>
+                  <p class="card-text">{{todo.date}}</p>
+                  <p class="card-text">{{todo._id}}</p>
+
+                  <p>
+                    <a class="btn btn-outline-info mr-2" routerLink="/edit/{{todo._id}}">Edit</a>
+                    <button class="btn btn-outline-danger float-right" (click)="delete(todo._id)">Delete</button>
+                  </p>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
